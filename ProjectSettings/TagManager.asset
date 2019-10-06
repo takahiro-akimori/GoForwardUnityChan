@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - DamageObject
+  - CubePrefabTag
+  - UnityChan2DTag
   layers:
   - Default
   - TransparentFX
