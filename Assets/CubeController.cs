@@ -21,9 +21,7 @@ public class CubeController : MonoBehaviour {
 	// Use this for initialization
 	void Start(){
 		
-		//キューブとunitychanの情報を取得
-		//this.cube = GameObject.Find("CubePrefab");
-		//this.unitychan = GameObject.Find ("unitychan");
+		//audiosourceの情報取得
 		audiosource = this.GetComponent<AudioSource>();
 
 	}
@@ -44,17 +42,17 @@ public class CubeController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 
 		//相手のobjectを取得
-		string obname = col.gameObject.name;
+		string obtag = col.gameObject.tag;
 
-		//状況分け
-		//UnityChan
-		if (obname == "UnityChan2D") {
-			audiosource.Stop();
-		}else{					//それ以外（cube同士とground）
+		//状況分けUnityChan
+		if (obtag == "UnityChan2DTag") {
+			
+		}else{					
+			//それ以外（cube同士とground）
 			audiosource.Play();
 		}
 
-		Debug.Log (obname);
+		Debug.Log (obtag);
 	}
 
 }
